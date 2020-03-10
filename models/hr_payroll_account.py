@@ -227,7 +227,7 @@ class hr_payslip(osv.osv):
 
 
             if holiday_ids:
-                res = self.pool.get('hr.leave').browse(holiday_ids)[0]
+                res = self.env['hr.leave'].browse(holiday_ids)[0]
 
 
             return res
@@ -286,14 +286,14 @@ class hr_payslip(osv.osv):
 
                         if leave_type:
 
-                            if leave_type.number_of_days_temp >= 1:
+                            if leave_type.number_of_days >= 1:
 
                                 
                                 ignore_days.update({
                                     leave_type.id : ignore_days.get( leave_type.id, 0 ) + 1 
                                 })
                         
-                                if ignore_days.get( leave_type.id, 0 ) > leave_type.number_of_days_temp:
+                                if ignore_days.get( leave_type.id, 0 ) > leave_type.number_of_days:
                                     attendances['number_of_days'] += 1.0
                                     continue
 
@@ -319,7 +319,7 @@ class hr_payslip(osv.osv):
                                             'name': leave_type.name,
                                             'sequence': 0,
                                             'code': leave_type.holiday_status_id.name,
-                                            'number_of_days': leave_type.number_of_days_temp,
+                                            'number_of_days': leave_type.number_of_days,
                                             'number_of_hours': leave_type.number_of_hours_temp,
                                             'contract_id': contract.id,
                                         }

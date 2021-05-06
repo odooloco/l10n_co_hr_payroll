@@ -143,7 +143,7 @@ class HrPayslip(models.Model    ):
                 if credit_account_id:
                     credit_line = (0, 0, {
                         'name': line.name,
-                        'partner_id': line._get_partner_id(credit_account=True),
+                        'partner_id': partnet_id,
                         'account_id': credit_account_id,
                         'journal_id': slip.journal_id.id,
                         'date': date,

@@ -32,7 +32,7 @@ class hr_salary_rule(osv.osv):
 
 hr_salary_rule()
 
-class HrPayslip(models.Model    ):
+class HrPayslip(models.Model):
     '''
     Pay Slip
     '''

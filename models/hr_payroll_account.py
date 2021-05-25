@@ -18,7 +18,7 @@ from odoo.exceptions import UserError
 import logging
 _logger = logging.getLogger(__name__)
 
-class hr_salary_rule(osv.osv):
+class HrSalaryRule(models.Model):
     _inherit = 'hr.salary.rule'
 
     origin_partner = fields.Selection((('employee','Empleado'),
@@ -29,8 +29,6 @@ class hr_salary_rule(osv.osv):
                                   'Tipo de tercero', required=True, default = 'employee')
     partner_id = fields.Many2one('res.partner', 'Tercero')
 
-
-hr_salary_rule()
 
 class HrPayslip(models.Model):
     '''

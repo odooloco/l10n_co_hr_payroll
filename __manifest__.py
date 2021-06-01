@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name' : 'Nómina Colombia 2017',
+    'name' : 'Nómina Colombia',
     'version' : '1.0',
     'summary': 'Liquidación de nómina - Colombia',
     'description': """
